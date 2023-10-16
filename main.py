@@ -1,6 +1,6 @@
 import subprocess
 import pkg_resources
-
+print("Checking and installing required packages...")
 def check_and_install(package_name):
     try:
         # Check if the package is installed
@@ -13,7 +13,7 @@ def check_and_install(package_name):
 required_packages = ["requests", "Adafruit_GPIO", "Adafruit_SSD1306", "Pillow", "schedule"]
 for package in required_packages:
     check_and_install(package)
-
+print("All required packages installed.")
 import time
 import socket
 import requests
@@ -117,4 +117,3 @@ if __name__ == "__main__":
     perma = Perma()
     monitor.run()
     perma.runner()
-    
