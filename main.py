@@ -111,3 +111,10 @@ class Perma:
         while True:
             schedule.run_pending()
             time.sleep(1)
+
+if __name__ == "__main__":
+    monitor = Monitor()
+    perma = Perma()
+    monitor.run()
+    perma.runner()
+    
