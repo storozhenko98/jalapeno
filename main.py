@@ -1,3 +1,19 @@
+import subprocess
+import pkg_resources
+
+def check_and_install(package_name):
+    try:
+        # Check if the package is installed
+        pkg_resources.get_distribution(package_name)
+    except pkg_resources.DistributionNotFound:
+        # Install the package if not installed
+        subprocess.check_call(["sudo", "pip3", "install", package_name])
+
+# Check and install required packages
+required_packages = ["requests", "Adafruit_GPIO", "Adafruit_SSD1306", "Pillow", "schedule"]
+for package in required_packages:
+    check_and_install(package)
+
 import time
 import socket
 import requests
